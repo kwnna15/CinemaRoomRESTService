@@ -5,6 +5,6 @@ import lombok.Builder;
 import lombok.extern.jackson.Jacksonized;
 
 @Jacksonized
-@Builder
+@Builder(toBuilder = true)
 public record Seat(int row, int column, int price, @JsonIgnore boolean taken) {
 }
