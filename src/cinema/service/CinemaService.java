@@ -1,14 +1,18 @@
 package cinema.service;
 
+import cinema.domain.Booking;
+import cinema.domain.Cancellation;
 import cinema.domain.Cinema;
-import cinema.domain.Seat;
+import cinema.domain.Token;
 
 import java.util.Optional;
 
 public interface CinemaService {
     Cinema getCinema();
 
-    Optional<Seat> purchaseSeat(int row, int column);
+    Optional<Booking> purchaseTicket(int row, int column);
+
+    Optional<Cancellation> returnTicket(Token token);
 
     boolean isValidSeat(int row, int column);
 }

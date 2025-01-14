@@ -1,10 +1,11 @@
 package cinema.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.extern.jackson.Jacksonized;
 
+import java.util.UUID;
+
 @Jacksonized
 @Builder(toBuilder = true)
-public record Seat(int row, int column, int price, @JsonIgnore boolean taken) {
+public record Booking(UUID token, Ticket ticket) {
 }
